@@ -1,11 +1,9 @@
 #include <stdio.h>
-
 /**
- * main -entry point
+ *main -Entry point
  *
- * Retun: 0 always
+ *Retun: 0 always
  */
-
 int main(void)
 
 {
@@ -19,4 +17,5 @@ putchar(alphabet);
 putchar('\n');
 
 return (0);
+
 }
