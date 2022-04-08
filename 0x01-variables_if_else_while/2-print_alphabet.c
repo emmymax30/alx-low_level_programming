@@ -1,18 +1,20 @@
 #include <stdio.h>
+
 /**
- *main - Entry point for the task
+ *main
  *
- *Retun: 0 always
+ *Return: Always (Success)
  */
+
 int main(void)
 
 {
-char alphabet;
 
-for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
-{
-putchar(alphabet);
-}
+char c;
+
+for (c = 'a'; c <= 'z'; c++)
+
+putchar(c);
 
 putchar('\n');
 
