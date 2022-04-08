@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 /**
  * main - entry point
@@ -16,6 +18,7 @@ if (n==0)
 printf("%i is zero\n", n);
 }
 else if (n<0)
+{
 printf("%i is negative\n", n);
 }
 else
