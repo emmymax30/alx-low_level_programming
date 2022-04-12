@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - entry point
  *
  * return: 0 Always (Success)
  */
-int main
+int main(void)
 {
 _putchar('_');
 _putchar('p');
