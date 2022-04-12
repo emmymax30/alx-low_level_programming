@@ -1,5 +1,5 @@
 #include "main.h"
-/*8
+/**
  * print_sign - print sign for every statement
  * @n - the int to print
  * Return: 0 Always
@@ -18,7 +18,7 @@ return (0);
 }
 else
 {
-_putchar('_');
+_putchar('-');
 return (-1);
 }
 }
