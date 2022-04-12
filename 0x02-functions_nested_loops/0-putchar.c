@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - entry point
+ *main -Entry point for 0-putchar.c
  *
  * return: 0 Always (Success)
  */
