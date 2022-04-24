@@ -12,7 +12,7 @@ char string_alpha[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 while (s[i] != '\0')
 {
 do {
-f (s[i] == string_alpha[j])
+if (s[i] == string_alpha[j])
 {
 s[i] = string_rot13[j];
 break;
