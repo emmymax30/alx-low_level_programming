@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * long_1 - main - check the code
  * @s: number
@@ -13,8 +14,8 @@ int long_1(char *s)
 		return (1 + long_1(s + 1));
 	}
 	return (0);
-}
 
+}
 /**
  * compare - main - check the code
  * @s: number
@@ -22,7 +23,6 @@ int long_1(char *s)
  *
  * Return: Always 0.
  */
-
 int compare(char *s, int l)
 {
 	if (l <= 0)
@@ -45,10 +45,10 @@ int compare(char *s, int l)
  *
  * Return: Always 0.
  */
-
 int is_palindrome(char *s)
 {
 	int l;
+
 	l = long_1(s);
 	return (compare(s, l));
 }
