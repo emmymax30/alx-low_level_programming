@@ -1,3 +1,4 @@
+#include "python.h"
 #include <stdio.h>
 
 int a, b;
@@ -6,7 +7,7 @@ int sum(int a, int b)
 {
 	return a+b;
 }
-int div(int a, int b)
+int divi(int a, int b)
 {
         return a/b;
 }
