@@ -1,51 +1,41 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "hash_tables.h"
 
 /**
- * hash_table_print - print the hash table content
- * @ht: The hash table
- * Description: Print out each content of the table
- *  and also navigate to check collisions and print it
- *
- * Return: Nothing
- */
+* hash_table_print - prints a hash table
+* @ht: the hash table
+*
+* Return: void
+*/
 
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_node_t *current;
-	hash_node_t *temp;
-	unsigned long int i, size, first = 1;
+	hash_node_t *temp = NULL;
+	unsigned int index = 0;
+	char *s = "";
 
-	/* Check if ht is valid */
-	if (ht != NULL)
-	{
-		size = ht->size;
-		printf("{");
-		for (i = 0; i < size; i++)
-		{
-			current = ht->array[i];
-			if (current != NULL)
-			{
-				if (first)
-				{
-					printf("'%s': '%s'", current->key, current->value);
-					first = 0;
-				}
-				else
-				{
-					printf(", '%s': '%s'", current->key, current->value);
-				}
-				/* Print collisions */
-				if (current->next != NULL)
-				{
-					temp = current->next;
-					while (temp != NULL)
-					{
-						printf(", '%s': '%s'", temp->key, temp->value);
-						temp = temp->next;
-					}
-				}
-			}
+	if (!ht) /* If theres is not table */
+		return;
+	putchar('{'); /* doing this for the format */
+
+	while (index < ht->size)
+	{ /* loop as many buckets as the whole hash table */
+		temp = ht->array[index];
+		if (temp) /* if the bucket is not empty, */
+			printf("%s", s); /* prints nothing until we actually printed */
+		while (temp) /* go through the bucket */
+		{ /* print the key and the value */
+			printf("'%s': '%s'", temp->key, temp->value);
+			if (temp->next) /* if there is more, print puncuation */
+				printf("%s", s);
+			temp = temp->next;
+			s = ", "; /* assigns the comma once we found a non empty index */
 		}
-		printf("}\n");
+		index++;
 	}
+	putchar('}');
+	putchar('\n');
 }
+

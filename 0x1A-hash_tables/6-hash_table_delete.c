@@ -1,37 +1,38 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "hash_tables.h"
 
 /**
- * hash_table_delete - delete the hash table
- * @ht: The hash table
- * Description: Delete each content of the table by
- *  freeing the allocated memory on the heap
- *  and also navigate to check collisions and delete it
- *
- * Return: Nothing
- */
+* hash_table_delete- deletes the hash table using freee
+* @ht: the hash table
+*
+* Return: void
+*/
 
 void hash_table_delete(hash_table_t *ht)
 {
-	hash_node_t *current, *temp;
-	unsigned long int i, size;
+	hash_node_t *temp;
+	hash_node_t *headTemp; /* head placeholder */
+	unsigned int index = 0;
 
-	/* Check if ht is valid */
-	if (ht != NULL)
-	{
-		size = ht->size;
-		for (i = 0; i < size; i++)
-		{
-			current = ht->array[i];
-			while (current != NULL)
-			{
-				temp = current;
-				free(temp->key);
-				free(temp->value);
-				free(temp);
-				current = current->next;
-			}
+	if (!ht) /* nothing to free */
+		return;
+	while (index < ht->size)
+	{ /* loop through the whole hash table */
+		headTemp = ht->array[index];
+		while (headTemp)
+		{ /* free the D */
+			temp = headTemp->next;
+			free(headTemp->key);
+			free(headTemp->value);
+			free(headTemp);
+			headTemp = temp;
 		}
-		free(ht->array);
-		free(ht);
+
+		index++;
 	}
+	/* free the rest of cositas */
+	free(ht->array);
+	free(ht);
 }
